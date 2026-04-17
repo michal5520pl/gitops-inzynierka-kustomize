@@ -20,4 +20,8 @@ spec:
                     name: ping-cm
                     key: PING_DST
                     optional: false
+            securityContext:
+              capabilities:
+                add:
+                  - NET_RAW
           restartPolicy: OnFailure
