@@ -2,7 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 configMapGenerator:
   - name: ping-cm
-    behavior: merge
     envs:
       - ping-cm.env
 
