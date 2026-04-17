@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: ping
+spec:
+  schedule: "*/2 * * * *"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: ping
+            image: image/ping
+            imagePullPolicy: IfNotPresent
+            env:
+              - name: HOSTNAME
+                valueFrom:
+                  configMapKeyRef:
+                    name: ping-cm
+                    key: PING_DST
+                    optional: false
+          restartPolicy: OnFailure
