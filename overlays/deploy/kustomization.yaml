@@ -3,3 +3,7 @@ kind: Kustomization
 resources:
   - ../../base/
   - ../ping/
+
+images:
+  - name: image/ping
+    newName: docker.io/willfarrell/ping

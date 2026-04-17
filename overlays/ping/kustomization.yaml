@@ -4,7 +4,3 @@ configMapGenerator:
   - name: ping-cm
     envs:
       - ping-cm.env
-
-images:
-  - name: image/ping
-    newName: docker.io/willfarrell/ping
