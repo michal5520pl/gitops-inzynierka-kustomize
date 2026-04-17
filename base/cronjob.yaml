@@ -13,10 +13,10 @@ spec:
           - name: ping
             image: image/ping
             imagePullPolicy: IfNotPresent
-            command: [ "/bin/ping" ]
+            command: [ "/bin/sh" ]
             args:
-              - -c2
-              - "${HOSTNAME}"
+              - -c
+              - "ping -c2 ${HOSTNAME}"
             env:
               - name: HOSTNAME
                 valueFrom:
